@@ -1,0 +1,23 @@
+extends ../layout
+
+block content
+  main  
+    div#header
+      h1 New Article
+    div#section  
+      form(action='/article/new' method='post')
+        p
+          label(for='title') Title
+            input#title(type='text' name='title')
+        p
+          label(for='url') Url
+            input#url(type='text' name='url')
+        p
+          input#textcolor(type="checkbox" name='textcolor')
+          label(for='textcolor') Background Image has Dark Colors  
+        p
+          label(for='excerpt') Excerpt
+            textarea#excerpt(type='text' name='excerpt')
+        p
+          label(for='body') Body
+            textarea#body(name='body')

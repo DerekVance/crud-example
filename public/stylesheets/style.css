@@ -1,8 +1,24 @@
 body {
+  background: url(congruent_outline.png);
+  background-repeat: repeat-x;
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
+main{
+  max-width: 1500px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+#header {
+  text-align: right;
+  background: url('https://unsplash.imgix.net/photo-1429198739803-7db875882052?dpr=2&fit=crop&fm=jpg&h=1575&q=75&w=1050')
+}
+
+#section {
+width: 400px
+}
 a {
   color: #00B7FF;
 }
