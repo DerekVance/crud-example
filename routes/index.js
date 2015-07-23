@@ -17,7 +17,7 @@ router.get('/article/new', function(req, res, next){
 
 router.post('/article/new', function(req, res, next){
   var title = req.body.title;
-  var urls = req.body.url;
+  var url = req.body.url;
   var textcolor = req.body.textcolor;
   var excerpt = req.body.excerpt;
   var body = req.body.body;
