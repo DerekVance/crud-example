@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('monk')(process.env.HOST) 
+var db = require('monk')(process.env.MONGOLAB_URI || process.env.HOST) 
 var articles = db.get('articles')
 
 /* GET home page. */
