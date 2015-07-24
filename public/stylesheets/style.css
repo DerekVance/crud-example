@@ -1,17 +1,50 @@
 body {
-  background: url(congruent_outline.png);
-  background-repeat: repeat-x;
-  padding: 50px;
+  background-image: url(/images/congruent_outline.png);
+  padding: 0px 50px 0px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0px 8px 0px;
 }
 
-main{
-  max-width: 1500px;
-  width: 95%;
+h1 {
   margin: 0 auto;
 }
 
+form {
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #CCC;
+}
+/*main{
+  max-width: 2000px;
+  width: 95%;
+  margin: 0 auto;
+}*/
+
+
+textarea {
+  padding: 10px;
+  display:inline-block;
+  width: 40%
+}
+
+label {
+  padding: 10px;
+  display:inline-block;
+  width: 130px;
+}
+
+input {
+  display: inline-block;
+  width: 550px;
+}
+
+.button {
+  text-align: center;
+  width: auto;
+  padding-left: 130px;
+}
 #header {
+  height: 150px;
   text-align: right;
   background: url('https://unsplash.imgix.net/photo-1429198739803-7db875882052?dpr=2&fit=crop&fm=jpg&h=1575&q=75&w=1050')
 }
@@ -19,6 +52,7 @@ main{
 #section {
 width: 400px
 }
+
 a {
   color: #00B7FF;
 }

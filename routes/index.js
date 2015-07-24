@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var db = require('monk')(process.env.MONGOLAB_URI || process.env.HOST)
 var articles = db.get('articles')
+var validator = require('validator');
 var validate = require('../lib/error')
 
 /* GET home page. */
@@ -31,8 +32,9 @@ router.post('/article/new', function(req, res, next){
     textcolor: textcolor,
     excerpt: excerpt,
     body: body
+  }, function () {
+    res.redirect('/');
   });
-  res.redirect('/');
 };
 });
 router.get('/article/:id', function(req, res, next){
@@ -54,12 +56,14 @@ router.post('/article/:id/edit', function(req, res, next){
     'textcolor': req.body.textcolor,
     'excerpt': req.body.excerpt,
     'body': req.body.body
-  }});
-  res.redirect('/');
+  }}).then(function () {
+    res.redirect('/');
+  });
 });
 
 
 router.post('/:id', function(req, res, next){
+  articles.remove({_id: req.params.id})
   res.redirect('/');
 })
 module.exports = router;

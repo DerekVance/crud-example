@@ -1,12 +1,12 @@
 extends ../layout
 
 block content
-  main  
-    div#header
-      h1 
-        a(href='/') The Zine
-    div#section
-      h3= articles.title
-      p= articles.excerpt
-      p= articles.body
-    a(href=articles._id + '/edit') Edit Entry
+  //- main  
+  div#header
+    h1 
+      a(href='/') The Zine
+  div#section
+    h3= articles.title
+    p= articles.excerpt
+    p= articles.body
+  a(href=articles._id + '/edit') Edit Entry

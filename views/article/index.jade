@@ -1,13 +1,15 @@
 extends ../layout
 
 block content
-  main
-    div#header
-      h1 
-        a(href='/') The Zine
-    for entry in articles
+  //- main
+  div#header
+    h1 
+      a(href='/') The Zine
+  for entry in articles
+    div#title
       h3
         a(href='article/' + entry._id)= entry.title
+    div#excerpt
       p=entry.excerpt
-    
-    a(href='article/new') New
+  
+  a(href='article/new') New

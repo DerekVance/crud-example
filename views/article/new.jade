@@ -1,25 +1,28 @@
 extends ../layout
 
 block content
-  main  
-    div#header
-      h1 
-        a(href='/') The Zine
-    div#section  
-      form(action='/article/new' method='post')
-        p
-          label(for='title') Title
-            input#title(type='text' name='title')
-        p
-          label(for='url') Url
-            input#url(type='text' name='url')
-        p
-          input#textcolor(type="checkbox" name='textcolor')
-          label(for='textcolor') Background Image has Dark Colors  
-        p
-          label(for='excerpt') Excerpt
-            textarea#excerpt(type='text' name='excerpt')
-        p
-          label(for='body') Body
-            textarea#body(name='body')
-        input(type='submit' value='Add Article to Magazine')
+  //- main  
+  div#header
+    h1 
+      a(href='/') The Zine
+  include ../../includes/error
+  div  
+    form(action='/article/new' method='post')
+      div.field
+        label(for='title') Title
+        input#title(type='text' name='title')
+      div.field
+        label(for='url') Url
+        input#url(type='text' name='url')
+      div.field
+        input#textcolor(type="checkbox" name='textcolor')
+        label(for='textcolor') Background Image has Dark Colors  
+      div.field
+        label(for='excerpt') Excerpt
+        textarea#excerpt(type='text' name='excerpt')
+      div.field
+        label(for='body') Body
+        textarea#body(name='body')
+      div.button  
+        button(type='submit') Add Article
+    
