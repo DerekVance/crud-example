@@ -8,7 +8,8 @@ var validate = require('../lib/error')
 /* GET home page. */
 router.get('/', function(req, res, next) {
   articles.find({}, function(err, record){
-  res.render('article/index', {articles: record});
+    console.log(record);
+    res.render('article/index', {articles: record});
   })
 });
 
@@ -22,20 +23,20 @@ router.post('/article/new', function(req, res, next){
   var textcolor = req.body.textcolor;
   var excerpt = req.body.excerpt;
   var body = req.body.body;
-  var verify = validate(title, excerpt, body)
+  var verify = validate(title, excerpt, body);
     if(verify.length > 0) {
       res.render('article/new', {error: verify})
     } else {
-  articles.insert({
-    title: title,
-    url: url,
-    textcolor: textcolor,
-    excerpt: excerpt,
-    body: body
-  }, function () {
-    res.redirect('/');
-  });
-};
+      articles.insert({
+        title: title,
+        url: url,
+        textcolor: textcolor,
+        excerpt: excerpt,
+        body: body
+      }).then(function() {
+          res.redirect('/');
+      });
+    };
 });
 router.get('/article/:id', function(req, res, next){
   articles.findOne({_id: req.params.id}, function(err, record){
@@ -46,24 +47,43 @@ router.get('/article/:id', function(req, res, next){
 router.get('/article/:id/edit', function(req, res, next){
   articles.findOne({_id: req.params.id}, function(err, record){
   res.render('article/edit', {articles: record});
-});
+  });
 });
 
 router.post('/article/:id/edit', function(req, res, next){
-  articles.update({_id: req.params.id},  {$set: {
-    'title': req.body.title,
-    'url': req.body.url,
-    'textcolor': req.body.textcolor,
-    'excerpt': req.body.excerpt,
-    'body': req.body.body
-  }}).then(function () {
-    res.redirect('/');
-  });
+  var title = req.body.title;
+  var url = req.body.url;
+  var textcolor = req.body.textcolor;
+  var excerpt = req.body.excerpt;
+  var body = req.body.body;
+  var verify = validate(title, excerpt, body);
+    if(verify.length > 0) {
+      res.render('article/:id/edit', {
+        title: req.body.title,
+        url: req.body.url,
+        textcolor: req.body.textcolor,
+        excerpt: req.body.excerpt,
+        body: req.body.body
+      });
+    } else {
+        articles.update({_id: req.params.id},  {$set: {
+          'title': req.body.title,
+          'url': req.body.url,
+          'textcolor': req.body.textcolor,
+          'excerpt': req.body.excerpt,
+          'body': req.body.body
+        }}).then(function () {
+          res.redirect('/');
+        });
+      }
 });
 
 
 router.post('/:id', function(req, res, next){
-  articles.remove({_id: req.params.id})
+  articles.remove({
+    _id: req.params.id
+  }).then(function(){
   res.redirect('/');
-})
+  });
+});
 module.exports = router;

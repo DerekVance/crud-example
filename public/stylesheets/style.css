@@ -5,26 +5,57 @@ body {
   margin: 0px 8px 0px;
 }
 
+p {
+  margin: 0 auto;
+}
+
 h1 {
   margin: 0 auto;
 }
 
-form {
-    margin: 0 auto;
-    background-color: white;
-    border: 1px solid #CCC;
-}
-/*main{
-  max-width: 2000px;
-  width: 95%;
+h3 {
   margin: 0 auto;
+}
+
+form {
+  margin: 0 auto;
+  background-color: white;
+  border: 1px solid #CCC;
+}
+
+a {
+  color: black;
+}
+
+.article {
+  margin: 10px;
+}
+
+#excerpt {
+  background-color: white;
+}
+
+#title {
+  background-color: white;
+}
+
+/*.field {
+  margin: 10px;
 }*/
+
+.dark {
+  color: white;
+}
+
+.white {
+  color: black;
+}
 
 
 textarea {
   padding: 10px;
   display:inline-block;
-  width: 40%
+  width: 40%;
 }
 
 label {
@@ -43,16 +74,13 @@ input {
   width: auto;
   padding-left: 130px;
 }
+
 #header {
   height: 150px;
   text-align: right;
-  background: url('https://unsplash.imgix.net/photo-1429198739803-7db875882052?dpr=2&fit=crop&fm=jpg&h=1575&q=75&w=1050')
+  background: url('https://unsplash.imgix.net/photo-1429198739803-7db875882052?dpr=2&fit=crop&fm=jpg&h=1575&q=75&w=1050');
 }
 
 #section {
-width: 400px
-}
-
-a {
-  color: #00B7FF;
+  width: 400px;
 }

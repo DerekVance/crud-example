@@ -1,15 +1,22 @@
 extends ../layout
 
 block content
-  //- main
   div#header
     h1 
       a(href='/') The Zine
-  for entry in articles
-    div#title
-      h3
-        a(href='article/' + entry._id)= entry.title
-    div#excerpt
-      p=entry.excerpt
-  
+  each entry in articles
+    if (entry.textcolor===null)     
+      div.article  
+        div#title(style='background-image: url(' + entry.url + ');')
+          h3
+            a.dark(href='article/' + entry._id)= entry.title
+          div#excerpt
+            p=entry.excerpt
+    else 
+      div.article  
+        div#title(style='background-image: url(' + entry.url + ');')
+          h3
+            a.white(href='article/' + entry._id)= entry.title
+          div#excerpt
+            p=entry.excerpt        
   a(href='article/new') New
