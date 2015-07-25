@@ -9,14 +9,14 @@ block content
       div.article  
         div#title(style='background-image: url(' + entry.url + ');')
           h3
-            a.dark(href='article/' + entry._id)= entry.title
+            a.white(href='article/' + entry._id)= entry.title
           div#excerpt
             p=entry.excerpt
     else 
       div.article  
         div#title(style='background-image: url(' + entry.url + ');')
           h3
-            a.white(href='article/' + entry._id)= entry.title
+            a.dark(href='article/' + entry._id)= entry.title
           div#excerpt
             p=entry.excerpt        
   a(href='article/new') New

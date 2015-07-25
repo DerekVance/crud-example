@@ -7,11 +7,11 @@ block content
       a(href='/') The Zine
   div#excerpt
     if (articles.textcolor===null)     
-      h3.dark(style='background-image: url(' + articles.url + ');')= articles.title
+      h3.white(style='background-image: url(' + articles.url + ');')= articles.title
       p= articles.excerpt
       p= articles.body
     else    
-      h3.white(style='background-image: url(' + articles.url + ');')= articles.title
+      h3.dark(style='background-image: url(' + articles.url + ');')= articles.title
       p= articles.excerpt
       p= articles.body  
   a(href=articles._id + '/edit') Edit Entry
