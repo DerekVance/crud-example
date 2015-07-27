@@ -6,15 +6,23 @@ body {
 }
 
 p {
-  margin: 0 auto;
+  margin: 15px;
 }
 
 h1 {
-  margin: 0 auto;
+  font-size: 35px;
+  padding-top: 50px;
+  padding-right: 15px
+
+}
+
+#textcolor {
+  width: auto;
 }
 
 h3 {
-  margin: 0 auto;
+  vertical-align: bottom;
+  padding: 15px;
 }
 
 form {
@@ -24,18 +32,22 @@ form {
 }
 
 a {
+  text-decoration: none;
   color: black;
 }
 
 .article {
-  margin: 10px;
+  margin: 10px 0;
+
 }
 
 #excerpt {
+  padding: 10px;
   background-color: white;
 }
 
 #title {
+  height: 50px;
   background-color: white;
 }
 
